@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg  ">
+    <div class="container">
+        <a class="navbar-brand" [routerLink]="routerTo()">Proyecto Potos</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse float-end" id="navbarNav">
+            
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" [hidden]="isLogin()">
+                    <a class="nav-link" routerLink="auth/login">Log In</a>
+                </li>
+                <li class="nav-item" [hidden]="isLogin()">
+                    <a class="nav-link" routerLink="auth/signup">Sign Up</a>
+                </li>
+                <li class="nav-item" [hidden]="!isLogin()">
+                    <a class="nav-link" routerLink="/main/photoNew" >Upload</a>
+                </li>
+                <li class="nav-item" [hidden]="!isLogin()">
+                    <a class="nav-link" (click)="logout()" >Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

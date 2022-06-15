@@ -1,0 +1,7 @@
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 21%, rgba(240,168,237,1) 100%);;
+}

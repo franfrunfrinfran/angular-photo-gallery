@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-photo-gallery": {
+    "proyectoPhotoAngular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-photo-gallery",
+            "outputPath": "dist/proyecto-photo-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -27,8 +27,10 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootswatch/dist/cosmo/bootstrap.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/saga-purple/theme.css",
+              "node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": []
           },
@@ -69,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-photo-gallery:build:production"
+              "browserTarget": "proyectoPhotoAngular:build:production"
             },
             "development": {
-              "browserTarget": "angular-photo-gallery:build:development"
+              "browserTarget": "proyectoPhotoAngular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-photo-gallery:build"
+            "browserTarget": "proyectoPhotoAngular:build"
           }
         },
         "test": {
@@ -103,5 +105,5 @@
       }
     }
   },
-  "defaultProject": "angular-photo-gallery"
+  "defaultProject": "proyectoPhotoAngular"
 }

@@ -1,0 +1,75 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="title" id="titulo">Registro</div>
+            <form action="#">
+                <div class="user-details">
+
+                <!-- USER -->
+                    <div class="input-box">
+                        <span class="details">Nombre</span>
+                        <input type="text" name="Nombre" required
+                        [(ngModel)]="usuario.username">
+                        <span class="form-text text-danger" *ngIf="!usuarioValidoExiste">
+                            El usuario ya se encuentra en uso
+                        </span>
+                        <span class="form-text text-danger" *ngIf="!usuarioValidoLongitud">
+                            El usuario debe tener más de 2 caracteres.
+                        </span>
+                    </div>
+                    <!-- Email -->
+                    <div class="input-box">
+                        <span class="details">Correo</span>
+                        <input type="email" name="Correo" required
+                        [(ngModel)]="usuario.email">
+                        <span class="form-text text-danger" *ngIf="!emailValido">
+                            El email no es correcto.
+                        </span>
+                        
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Contraseña</span>
+                        <input type="password" name="Contraseña" required
+                        [(ngModel)]="usuario.password">
+                        <span class="form-text text-danger" *ngIf="!passValida">
+                            La contraseña debe tener mínimo 2 caracteres.
+                        </span>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Repetir contraseña</span>
+                        <input type="password" name="Contraseña2" required
+                        [(ngModel)]="passRep">
+                        <span class="form-text text-danger" *ngIf="!passIgual">
+                            Las contraseñas no son iguales
+                        </span>
+                    </div>
+                </div>
+                                
+                <div class="buttons">
+                    <button type="button" class="btn" (click)="registrar()">
+                        Registrar
+                    </button>                    
+                </div>
+            </form>
+            <div class="img">
+                <img src="./assets/img/form.png" alt="passwordImg">
+            </div>
+        </div>
+    </div>
+ <!--    <div class="fondo">
+        <div class="area" >
+            <ul class="circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div >
+    </div> -->
+</section>

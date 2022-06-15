@@ -1,26 +1,32 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavigationComponent } from './components/navigation/navigation.component';
-import { PhotoFormComponent } from './components/photo-form/photo-form.component';
-import { PhotoPreviewComponent } from './components/photo-preview/photo-preview.component';
-import { PhotoListComponent } from './components/photo-list/photo-list.component';
+import { PhotoModule } from './photo/photo.module';
+import { HomeComponent } from './shared/home/home.component';
+import { PrimeNgModule } from './prime-ng/prime-ng.module';
+import { AuthModule } from './auth/auth.module';
+import { NavigationComponent } from './shared/navigation/navigation.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     NavigationComponent,
-    PhotoFormComponent,
-    PhotoPreviewComponent,
-    PhotoListComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    PhotoModule,
+    PrimeNgModule,
+    AuthModule,
+    HttpClientModule,
+    ReactiveFormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

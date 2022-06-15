@@ -1,27 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './shared/home/home.component';
+import { AuthModule } from './auth/auth.module';
+import { AuthGuard } from './auth/guards/auth.guard';
 
-import {PhotoListComponent} from './components/photo-list/photo-list.component'
-import {PhotoFormComponent} from './components/photo-form/photo-form.component'
-import {PhotoPreviewComponent} from './components/photo-preview/photo-preview.component'
 
 const routes: Routes = [
   {
-    path: 'photos',
-    component: PhotoListComponent
+    path: "",
+    component: HomeComponent
   },
   {
-    path: 'photos/new',
-    component: PhotoFormComponent
+    path: "auth",
+    loadChildren: () => import("./auth/auth.module").then(x => x.AuthModule),
   },
   {
-    path: 'photos/:id',
-    component: PhotoPreviewComponent
+    path: "main",
+    loadChildren: () => import("./photo/photo.module").then(X => X.PhotoModule),
+    canLoad: [AuthGuard],
+    canActivate: [AuthGuard]
   },
   {
-    path: '',
-    redirectTo:'/photos',
-    pathMatch: 'full'
+    path: "**",
+    redirectTo: ""
   }
 ];
 
